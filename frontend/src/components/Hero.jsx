@@ -18,9 +18,9 @@ function Hero() {
           <button className="primary-btn">Get Started</button>
         </a>
 
-        <a href="#about-section">
-          <button className="secondary-btn">Learn More</button>
-        </a>
+        <a href="#upload-section">
+  <button className="secondary-btn">Upload CSV</button>
+</a>
       </div>
     </section>
   );

@@ -33,16 +33,18 @@ function Navbar() {
           justifyContent: "center",
         }}
       >
-        <a href="#hero-section" style={{ color: "white", textDecoration: "none" }}>
+        <a
+          href="#hero-section"
+          style={{ color: "white", textDecoration: "none" }}
+        >
           Home
         </a>
 
-        <a href="#features-section" style={{ color: "white", textDecoration: "none" }}>
-          Features
-        </a>
-
-        <a href="#about-section" style={{ color: "white", textDecoration: "none" }}>
-          About
+        <a
+          href="#upload-section"
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          Upload
         </a>
       </div>
     </nav>
