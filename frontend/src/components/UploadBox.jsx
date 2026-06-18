@@ -159,12 +159,12 @@ function UploadBox() {
           }}
         >
           <table
-            style={{
-              width: "100%",
-              minWidth: "1200px",
-              borderCollapse: "collapse",
-            }}
-          >
+  style={{
+    width: "100%",
+    minWidth: "800px",
+    borderCollapse: "collapse",
+  }}
+>
             <thead>
               <tr>
                 {Object.keys(preview[0]).map((key) => (
