@@ -5,13 +5,13 @@ function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        flexWrap: "wrap",
         padding: "15px 20px",
         background: "#111827",
         color: "white",
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        flexWrap: "wrap",
         gap: "10px",
       }}
     >
@@ -28,29 +28,20 @@ function Navbar() {
       <div
         style={{
           display: "flex",
-          gap: "20px",
+          gap: "15px",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
       >
-        <a
-          href="#hero-section"
-          style={{ color: "white", textDecoration: "none" }}
-        >
+        <a href="#hero-section" style={{ color: "white", textDecoration: "none" }}>
           Home
         </a>
 
-        <a
-          href="#features-section"
-          style={{ color: "white", textDecoration: "none" }}
-        >
+        <a href="#features-section" style={{ color: "white", textDecoration: "none" }}>
           Features
         </a>
 
-        <a
-          href="#about-section"
-          style={{ color: "white", textDecoration: "none" }}
-        >
+        <a href="#about-section" style={{ color: "white", textDecoration: "none" }}>
           About
         </a>
       </div>
