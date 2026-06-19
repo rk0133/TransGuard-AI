@@ -112,7 +112,7 @@ const chunkFiles = splitCSV(validatedData, 1000);
   preview: validatedData.slice(0, 20),
 
   // Download full validated CSV
- downloadUrl: "https://transguard-ai-backend.onrender.com/output/validated_output.csv",
+downloadUrl: "https://transguard-ai-api.onrender.com/output/validated_output.csv",
 
   // Download chunk files
   chunks: chunkFiles,

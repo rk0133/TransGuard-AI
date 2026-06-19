@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "../styles/home.css";
 
@@ -7,12 +6,10 @@ function UploadBox() {
   const [preview, setPreview] = useState([]);
   const [uploadMessage, setUploadMessage] = useState("");
 
-  // Summary counts
   const [totalRows, setTotalRows] = useState(0);
   const [validRows, setValidRows] = useState(0);
   const [invalidRows, setInvalidRows] = useState(0);
 
-  // Download URL
   const [downloadUrl, setDownloadUrl] = useState("");
   const [chunks, setChunks] = useState([]);
 
@@ -27,10 +24,13 @@ function UploadBox() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("https://transguard-ai-backend.onrender.com/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://transguard-ai-api.onrender.com/api/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
 
@@ -39,14 +39,12 @@ function UploadBox() {
       setUploadMessage(data.message || "");
       setPreview(data.preview || []);
 
-      // Summary values
       setTotalRows(data.totalRows || 0);
       setValidRows(data.validRows || 0);
       setInvalidRows(data.invalidRows || 0);
 
-      // Download link
       setDownloadUrl(data.downloadUrl || "");
-      setChunks(data.chunks || []);    
+      setChunks(data.chunks || []);
     } catch (error) {
       console.error(error);
 
@@ -82,7 +80,6 @@ function UploadBox() {
         </p>
       )}
 
-      {/* Summary */}
       {totalRows > 0 && (
         <div
           style={{
@@ -96,18 +93,11 @@ function UploadBox() {
           }}
         >
           <span>📊 Total Rows: {totalRows}</span>
-
-          <span style={{ color: "#22c55e" }}>
-            ✅ Valid: {validRows}
-          </span>
-
-          <span style={{ color: "#ef4444" }}>
-            ❌ Invalid: {invalidRows}
-          </span>
+          <span style={{ color: "#22c55e" }}>✅ Valid: {validRows}</span>
+          <span style={{ color: "#ef4444" }}>❌ Invalid: {invalidRows}</span>
         </div>
       )}
 
-      {/* Download Button */}
       {downloadUrl && (
         <div
           style={{
@@ -132,23 +122,20 @@ function UploadBox() {
           </a>
         </div>
       )}
-      {chunks.length > 0 && (
-  <div style={{ textAlign: "center", marginBottom: "20px" }}>
-    <h3>📦 Download Split Files</h3>
 
-    {chunks.map((chunk, index) => (
-      <div key={index} style={{ margin: "10px 0" }}>
-        <a
-          href={chunk.url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          ⬇️ Download {chunk.name}
-        </a>
-      </div>
-    ))}
-  </div>
-)}
+      {chunks.length > 0 && (
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <h3>📦 Download Split Files</h3>
+
+          {chunks.map((chunk, index) => (
+            <div key={index} style={{ margin: "10px 0" }}>
+              <a href={chunk.url} target="_blank" rel="noreferrer">
+                ⬇️ Download {chunk.name}
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
 
       {preview.length > 0 && (
         <div
@@ -159,12 +146,12 @@ function UploadBox() {
           }}
         >
           <table
-  style={{
-    width: "100%",
-    minWidth: "800px",
-    borderCollapse: "collapse",
-  }}
->
+            style={{
+              width: "100%",
+              minWidth: "800px",
+              borderCollapse: "collapse",
+            }}
+          >
             <thead>
               <tr>
                 {Object.keys(preview[0]).map((key) => (

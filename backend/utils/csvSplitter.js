@@ -29,7 +29,7 @@ function splitCSV(rows, chunkSize = 1000) {
 
     files.push({
       name: fileName,
-     url: `https://transguard-ai-backend.onrender.com/output/chunks/${fileName}`,
+     url: `https://transguard-ai-api.onrender.com/output/chunks/${fileName}`,
     });
   }
 
